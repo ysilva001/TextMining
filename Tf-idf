@@ -1,0 +1,17 @@
+##Term frequency-inverse document frequency using the tm package.
+##This weight is a statistical measure used to evaluate how important a word is to a document in a collection or corpus.
+
+library("tm")
+#set directory
+setwd("C:/Users/ysilva/Desktop/Data Science Practicum")
+
+#read 1000 Reviews from providers with 5 stars directory data/txt
+library(readr) ##provides several functions (read_delim(), read_tsv() and read_csv()), 
+##which are faster than R base functions and import data into R as a tbl_df (pronounced as “tibble diff”)
+Rating5 <- read_csv("C:/Users/ysilva/Desktop/Data Science Practicum/Rating5.csv")
+head(Rating5)
+corpus5 <- Corpus(VectorSource(Rating5$CommentText))
+summary(corpus5)
+
+##Preprocessing/Normalizing 
+
